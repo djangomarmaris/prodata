@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block seo %}
+
+
+<title>Datamaris</title>
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="" />
+
+<link rel="canonical" href=""/>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+<meta name="robots" content="index,follow"/>
+
+<meta name="googlebot" content="index,follow"/>
+
+<meta name="author" content="İhsan Gürol Demirtaş">
+
+<meta name="publisher" content="2020.01" />
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<main class="site-content">
+
+
+                <div class="page-content">
+                    <!-- ================== -->
+                    <!-- contact-info start -->
+                    <div class="contact-info">
+                        <div class="container">
+                            <div class="contact-inner">
+                                <div class="row justify-content-center">
+                                    <div class="col-xl-11">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="contact-single">
+                                                    <i class="icofont-headphone-alt-3"></i>
+                                                    <h4>Telefon</h4>
+                                                    <p>	+90 (212) 513 84 19</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="contact-single">
+                                                    <i class="icofont-location-pin"></i>
+                                                    <h4>Adres</h4>
+                                                    <p>	Netsel Marina Alışveriş Merkezi Kat:1 No:38 Marmaris/MUĞLA</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="contact-single">
+                                                    <i class="icofont-email"></i>
+                                                    <h4>E-mail</h4>
+                                                    <p>	info@datamaristeknoloji.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contact-info end -->
+                    <!-- ================ -->
+
+                    <!-- ======================= -->
+                    <!-- contact-form-area start -->
+                    <div class="contact-form-area" id="contact-form">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8">
+                                    <form class="contact-form" method="post">
+                                        {% csrf_token %}
+                                        <h2>Bize Ulaşın</h2>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input required name="name" type="text" placeholder="İsim" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input required name="email" type="text" placeholder="Email" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input required name="phone" type="text" placeholder="Telefom" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input required name="subject" type="text" placeholder="Konu" />
+                                            </div>
+                                            <div class="col-12">
+                                                <textarea required name="messages" placeholder="Mesaj"></textarea>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                <button name='btnSubmit' type="submit" class="theme-btn">Gönder <i class="icofont-double-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- contact-form-area end -->
+
+
+                    <!-- ======================= -->
+                    <!-- contact-form-area start -->
+                    <div class="contact-map"><div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%09Netsel%20Marina%20Al%C4%B1%C5%9Fveri%C5%9F%20Merkezi%20Kat:1%20No:38%20Marmaris/MU%C4%9ELa+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/wearable-gps/">wearable gps</a></iframe></div></div>
+                    <!-- contact-form-area end -->
+
+                </div>
+                <!-- /.page-content -->
+            </main>
+
+{% endblock %}
+
+
+{% block jss %}
+{% endblock %}

@@ -1,0 +1,104 @@
+{% load static i18n %}
+
+<footer>
+
+                <div class="footer-middle">
+                    <div class="container">
+                        <div class="row justify-content-between">
+                            <div class="col-lg-3 col-md-6">
+                                <div class="footer-gallery footer-col d-flex flex-wrap">
+                                    <figure>
+                                        <a href="{% static 's1.jpeg' %}">
+                                            <img src="{% static 's1.jpeg' %}" alt="Footer Gallery Image" />
+                                        </a>
+                                    </figure>
+                                    <figure>
+                                        <a href="{% static 's2.jpeg' %}">
+                                            <img src="{% static 's2.jpeg' %}" alt="Footer Gallery Image" />
+                                        </a>
+                                    </figure>
+                                    <figure>
+                                        <a href="{% static 's3.jpeg' %}">
+                                            <img src="{% static 's3.jpeg' %}" alt="Footer Gallery Image" />
+                                        </a>
+                                    </figure>
+                                    <figure>
+                                        <a href="{% static 's4.jpeg' %}">
+                                            <img src="{% static 's4.jpeg' %}" alt="Footer Gallery Image" />
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3 col-md-6 pr-xl-0">
+                                <div class="footer-col">
+                                    <h2>İletişim Bilgileri</h2>
+                                    <div class="footer-contact">
+                                        <p>
+                                            <i class="icofont-location-pin"></i>
+                                            <span>622 Dixie Path , South obinches, UT 98336</span>
+                                        </p>
+                                        <p>
+                                            <i class="icofont-ui-call"></i>
+                                            <span>(00) 86 95 78 69</span>
+                                        </p>
+                                        <p>
+                                            <i class="icofont-email"></i>
+                                            <span>support24@gmail.com</span>
+                                        </p>
+                                    </div>
+                                    <div class="footer-social">
+                                        <a href="https://www.facebook.com/" target="_blank">
+                                            <i class="icofont-facebook"></i>
+                                        </a>
+                                        <a href="https://twitter.com/home" target="_blank">
+                                            <i class="icofont-twitter"></i>
+                                        </a>
+                                        <a href="skype:robert-biswas?chat">
+                                            <i class="icofont-skype"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3 col-md-6 pr-xl-0">
+                                <div class="footer-col">
+                                    <h2>Servislerimiz</h2>
+                                    <ul>
+                                        {% for y in services %}
+                                        <li><a href="/datamaris/contact/">{{y.title}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3 col-md-6 pr-xl-0">
+                                <div class="footer-col">
+                                    <h2>Datamaris</h2>
+                                    <ul>
+                                        <li><a href="/">Ana Sayfa</a></li>
+                                        <li><a href="#about">Hakkımızda</a></li>
+                                        <li><a href="#serivce">Servisler</a></li>
+                                        <li><a href="#team">Ekip</a></li>
+                                        <li><a href="contact.html">İletişim</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.footer-middle -->
+                <div class="footer-bottom">
+                    <div class="container">
+                        <p>Copyright © <span>2021</span> | <a href="www.centralwebagency.com" style="color:white" > Central Web Agency</a></p>
+                    </div>
+                </div>
+                <!-- /.footer-bottom -->
+            </footer>
+            <!-- footer end -->
+            <!-- ========== -->
+        </div>
+        <!-- page-wrapper end -->
+        <!-- ================ -->
+
+
+        <div class="scroll-to-top" data-target="html">
+            <i class="icofont-arrow-up"></i>
+        </div>

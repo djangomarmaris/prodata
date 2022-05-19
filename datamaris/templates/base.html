@@ -1,0 +1,78 @@
+<!doctype html>
+{% load static i18n %}
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+
+    {% block css%}
+    {% endblock%}
+
+
+    <link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}" />
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+
+
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/icofont.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/mainmenu.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/slick.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet" />
+
+    {% block seo %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+
+
+
+
+
+{% include "navbar.html" %}
+{% for message in messages %}
+<div class="alert alert-primary" role="alert">
+    {{message}}
+</div>
+{% endfor %}
+{% block content %}
+
+
+
+{% endblock %}
+{% include "footer.html" %}
+
+
+
+
+
+
+
+{% block jss %}
+
+{% endblock %}
+
+     <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.parallax-scroll.js' %}"></script>
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+</body>
+</html>

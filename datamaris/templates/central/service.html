@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% load static i18n %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block seo %}
+
+
+<title>Servilserimiz</title>
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="" />
+
+<link rel="canonical" href=""/>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+<meta name="robots" content="index,follow"/>
+
+<meta name="googlebot" content="index,follow"/>
+
+<meta name="author" content="İhsan Gürol Demirtaş">
+
+<meta name="publisher" content="2020.01" />
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="service-section" id="service">
+                    <div class="container-xl">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-6">
+                                <div class="section-header text-center wow animate__animated animate__slow animate__fadeInUp">
+                                    <h2>Servislerimiz</h2>
+                                    <p>Bu alana Kısa metin Servislerimiz arka alandan Dinammik girilcek</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-area">
+                        <div class="container-xl">
+                            <div class="row">
+                                {% for service in services %}
+                                <div class="col-lg-6">
+                                    <div class="service-single">
+                                        <figure>
+                                            <a href="service.html">
+                                                <img src="{% if service.image %}{{ service.image.url }}{% else %}{% endif %}" alt="Service Thumb" />
+                                            </a>
+                                        </figure>
+                                        <div class="service-card">
+                                            <h2><a href="service.html" class="tdu-hover">{{service.title}}</a></h2>
+                                            <p>{{service.service}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="service.html" class="theme-btn">Bize ulaşın <i class="icofont-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+{% endblock %}
+
+
+{% block jss %}
+{% endblock %}
