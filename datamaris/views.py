@@ -1,11 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django.core.mail import send_mail
-from .models import Service,About,Personel,Comment ,Referance
+from .models import Service, About, Personel, Comment, Referance, Slider, Partners, Images , YouTube
+
+
 # Create your views here.
 
 
 def index(request):
+    partners = Partners.objects.all()
+    sliders = Slider.objects.all()
     abouts = About.objects.all()
     services = Service.objects.all()
     personels = Personel.objects.all()
@@ -17,32 +21,101 @@ def index(request):
         'services':services,
         'personels':personels,
         'referances':referances,
-        'comments':comments
+        'comments':comments,
+        'sliders':sliders,
+        'partners':partners
     }
 
     return render(request,'central/index.html',context)
 
 
 def service(request):
+    partners = Partners.objects.all()
+    sliders = Slider.objects.all()
+    abouts = About.objects.all()
     services = Service.objects.all()
-
+    personels = Personel.objects.all()
+    referances = Referance.objects.all()
+    comments = Comment.objects.all()
 
     context = {
-       'services':services
+        'abouts': abouts,
+        'services': services,
+        'personels': personels,
+        'referances': referances,
+        'comments': comments,
+        'sliders': sliders,
+        'partners': partners
     }
     return render(request,'central/service.html',context)
 
 
-def referance(request):
+def service_detail(request,slug,id):
+    partners = Partners.objects.all()
+    sliders = Slider.objects.all()
+    abouts = About.objects.all()
+    services = Service.objects.all()
+    personels = Personel.objects.all()
     referances = Referance.objects.all()
+    comments = Comment.objects.all()
 
+    product = get_object_or_404(Service, slug=slug,id=id)
+    images = Images.objects.filter(product_id=id)
 
     context = {
-        'referances':referances
+        'abouts': abouts,
+        'services': services,
+        'personels': personels,
+        'referances': referances,
+        'comments': comments,
+        'sliders': sliders,
+        'partners': partners,
+        'product':product,
+        'images':images
+    }
+    return render(request,'central/service_detail.html',context)
+
+
+def referance(request):
+    partners = Partners.objects.all()
+    sliders = Slider.objects.all()
+    abouts = About.objects.all()
+    services = Service.objects.all()
+    personels = Personel.objects.all()
+    referances = Referance.objects.all()
+    comments = Comment.objects.all()
+
+    context = {
+        'abouts': abouts,
+        'services': services,
+        'personels': personels,
+        'referances': referances,
+        'comments': comments,
+        'sliders': sliders,
+        'partners': partners
     }
     return render(request,'central/referance.html',context)
 
 def contact(request):
+    videos = YouTube.objects.all()
+    partners = Partners.objects.all()
+    sliders = Slider.objects.all()
+    abouts = About.objects.all()
+    services = Service.objects.all()
+    personels = Personel.objects.all()
+    referances = Referance.objects.all()
+    comments = Comment.objects.all()
+
+    context = {
+        'abouts': abouts,
+        'services': services,
+        'personels': personels,
+        'referances': referances,
+        'comments': comments,
+        'sliders': sliders,
+        'partners': partners,
+        'videos': videos
+    }
     if 'btnSubmit' in request.POST:
         if True:
             nerden= 'iletişim formu mesajı'
@@ -63,4 +136,29 @@ def contact(request):
             messages)
             send_mail(subject, contact_message, from_email, to_email, fail_silently=True)
             return redirect('/')
-    return render(request,'central/contact.html')
+    return render(request,'central/contact.html',context)
+
+
+
+
+def video(request):
+    videos = YouTube.objects.all()
+    partners = Partners.objects.all()
+    sliders = Slider.objects.all()
+    abouts = About.objects.all()
+    services = Service.objects.all()
+    personels = Personel.objects.all()
+    referances = Referance.objects.all()
+    comments = Comment.objects.all()
+
+    context = {
+        'abouts': abouts,
+        'services': services,
+        'personels': personels,
+        'referances': referances,
+        'comments': comments,
+        'sliders': sliders,
+        'partners': partners,
+        'videos':videos
+    }
+    return render(request,'central/video.html',context)

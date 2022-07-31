@@ -1,10 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% load static i18n %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block seo %}
+
+
+<title>Servilserimiz</title>
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="" />
+
+<link rel="canonical" href=""/>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+<meta name="robots" content="index,follow"/>
+
+<meta name="googlebot" content="index,follow"/>
+
+<meta name="author" content="İhsan Gürol Demirtaş">
+
+<meta name="publisher" content="2020.01" />
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<br>
+<br>
+<section class="py-0">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="slick-carousel carousel-arrows-light"
+              data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "autoplay": true, "arrows": true, "dots": true, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 2}}, {"breakpoint": 480, "settings": {"slidesToShow": 1}}]}'>
+              {% for x in images %}
+              <a class="popup-gallery-item" href="{% if x.image %}{{ x.image.url }}{% else %}{% endif %}">
+                <img src="{% if x.image %}{{ x.image.url }}{% else %}{% endif %}" alt="gallery img">
+              </a>
+              {% endfor %}
+
+            </div><!-- /.gallery-images-wrapper -->
+          </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section><!-- /.Gallery -->
+
+    <!-- ======================
+     Text Content
+    ========================= -->
+    <section class="pb-50">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <span class="text__block-subtitle">Datamaris !</span>
+            <h5 class="text__block-title">{{product.header}}</h5>
+          </div>
+        </div><!-- /.row -->
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <p class="text__block-desc">{{product.info |safe }}
+            </p>
+            <p class="text__block-desc">{{product.infoTwo | safe }} </p>
+          </div><!-- /.col-lg-6 -->
+          <div class="col-sm-12 col-md-12 col-lg-5 offset-lg-1">
+            <ul class="list-items list-unstyled mb-30">
+              <li>{{product.ability}}</li>
+              <li>{{product.ability2}}</li>
+              <li>{{product.ability3}}</li>
+              <li>{{product.ability4}}</li>
+              <li>{{product.ability5}}</li>
+              <li>{{product.ability6}}</li>
+            </ul>
+          </div>
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.Text Content -->
+
+{% endblock %}
+
+
+{% block jss %}
+{% endblock %}

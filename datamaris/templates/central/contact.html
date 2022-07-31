@@ -34,7 +34,87 @@
 
 {% block content %}
 
+ <section class="google-map py-0">
+      <iframe frameborder="0" height="500" width="100%"
+        src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Netsel%20Marina%20Al%C4%B1%C5%9Fveri%C5%9F%20Merkezi%20Kat:1%20No:38%20+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+    </section><!-- /.GoogleMap -->
 
+    <section class="contact-layout1 pb-90">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="contact-panel p-0 box-shadow-none">
+              <div class="contact__panel-info mb-30">
+                <div class="contact-info-box">
+                  <h4 class="contact__info-box-title">Lokasyon</h4>
+                  <ul class="contact__info-list list-unstyled">
+                    <li>+90 (252) 413 19 88</li>
+                  </ul><!-- /.contact__info-list -->
+                </div><!-- /.contact-info-box -->
+                <div class="contact-info-box">
+                  <h4 class="contact__info-box-title">Quick Contact</h4>
+                  <ul class="contact__info-list list-unstyled">
+                    <li>Email: <a href="mailto:info@datamaristeknoloji.com">info@datamaristeknoloji.comom</a></li>
+                  </ul><!-- /.contact__info-list -->
+                </div><!-- /.contact-info-box -->
+                <div class="contact-info-box">
+                  <h4 class="contact__info-box-title">Açılıl-Kapanış</h4>
+                  <ul class="contact__info-list list-unstyled">
+                    <li>From Monday - Friday</li>
+                    <li>09:00 -  21:00</li>
+                  </ul><!-- /.contact__info-list -->
+                </div><!-- /.contact-info-box -->
+
+              </div><!-- /.contact__panel-info -->
+              <form method="post" class="contact__panel-form mb-30">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-sm-12">
+                    <h4 class="contact__panel-title">Bize Yazın</h4>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="İsim / Soyisim" id="contact-name" name="name"
+                        required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <input type="email" class="form-control" placeholder="Email" id="contact-email"
+                        name="email" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Telefon"
+                        name="phone" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Konu"
+                        name="subject" required>
+                    </div>
+                  </div><!-- /.col-lg-6 -->
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                      <textarea class="form-control" placeholder="Mesaınız" placeholder="Messages"
+                        id="contact-messgae" name="messages" required></textarea>
+                    </div>
+                  </div><!-- /.col-lg-12 -->
+                  <div class="col-sm-12 col-md-12 col-lg-12">
+                    <button name="btnSubmit" type="submit" class="btn btn__secondary">
+                      <i class="icon-arrow-right"></i><span>Gönder</span>
+                    </button>
+                    <div class="contact-result"></div>
+                  </div><!-- /.col-lg-12 -->
+                </div><!-- /.row -->
+              </form>
+            </div><!-- /.contact__panel -->
+          </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.contact layout 1 -->
 
 {% endblock %}
 

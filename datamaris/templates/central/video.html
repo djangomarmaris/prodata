@@ -1,10 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% load static i18n %}
+{% load embed_video_tags %}
+
+
+
+{% block css %}
+
+{% endblock %}
+
+{% block seo %}
+
+
+<title>Videolar</title>
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="" />
+
+<link rel="canonical" href=""/>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+<meta name="robots" content="index,follow"/>
+
+<meta name="googlebot" content="index,follow"/>
+
+<meta name="author" content="İhsan Gürol Demirtaş">
+
+<meta name="publisher" content="2020.01" />
+
+{% endblock %}
+
+
+
+
+{% block content %}
+<section id="gallery" class="gallery">
+      <div class="container">
+        <div class="row">
+          {% for item in videos %}
+          <div class="col-sm-6 col-md-6 col-lg-4">
+            {% video item.url '325x325' %}
+            <h5>{{item.name}}</h5>
+          </div><!-- /.col-lg-4 -->
+
+
+          {% endfor %}
+
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section><!-- /.Gallery -->
+
+
+{% endblock %}
+
+
+{% block jss %}
+{% endblock %}

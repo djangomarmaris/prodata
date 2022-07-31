@@ -33,6 +33,58 @@
 
 
 {% block content %}
+ <section class="page-title page-title-layout1 bg-overlay bg-overlay-2 bg-parallax text-center">
+      <div class="bg-img"><img src="{% static '1900.webp' %}" alt="background"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="pagetitle__heading mb-0">DATAMARİS </h1>
+            <a href="#awards" class="scroll-down">
+              <i class="icon-arrow-down"></i>
+            </a>
+          </div><!-- /.col-xl-6 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.page-title -->
+
+    <!-- ===========================
+      awards
+    ============================= -->
+    <section id="awards" class="awards pb-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
+            <div class="heading-layout2 text-center mb-50">
+              <h2 class="heading__subtitle"></h2>
+              <h3 class="heading__title">Referans ve İş Ortaklarımız</h3>
+            </div><!-- /.heading -->
+          </div><!-- /.col-lg-8 -->
+        </div><!-- /.row -->
+        <div class="row">
+            {%for ref in referances %}
+            <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="feature-item">
+              <div class="feature__img">
+                <img src="{% if ref.image %}{{ ref.image.url }}{% else %}{% endif %}" alt="certificate" class="img-fluid">
+              </div><!-- /.feature-img -->
+              <div class="feature__body">
+                <h4 class="feature__title">{{ref.referance}}</h4>
+                <p class="feature__desc">{{ref.work}}</p>
+              </div><!-- /.feature-content -->
+            </div><!-- /.feature-item -->
+          </div><!-- /.col-lg-4 -->
+            {% endfor %}
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </section><!-- /.awards -->
+
+{% endblock %}
+
+
+{% block jss %}
+
+
+{% endblock %}
 <div class="service-section">
                     <div class="container-xl">
                         <div class="row justify-content-center">
@@ -71,9 +123,3 @@
                         </div>
                     </div>
                 </div>
-
-{% endblock %}
-
-
-{% block jss %}
-{% endblock %}
